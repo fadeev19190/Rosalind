@@ -64,3 +64,5 @@ def glycosylation_motif(seq, peptide_list):
 
 
 glycosylation_motif(peptide_sequences, peptides_list_end)
+
+# Only one issue I am lazy to solve: the program prints the names of peptides that don't contain an N-glycosylation motif. In my solution on Rosalind's website, I've simply deleted them manually. Plus I admit that my code is clunky, but it works! I am very happy to see that after a few evenings to solve it. Have a lovely day! 
