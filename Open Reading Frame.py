@@ -1,27 +1,27 @@
-# importing required libraries
+# Importing required libraries
 from bio_structs import *
 from Bio import SeqIO
 
-# set input file name
+# Set input file name
 input_file = 'rosalind_orf.txt'
 
-# read sequences from fasta file
+# Read sequences from fasta file
 with open(input_file) as f:
     fasta_sequences = list(SeqIO.parse(f, 'fasta'))
 
 DNA_string_list = []
 
-# extract DNA sequences from fasta records and append them to a list
+# Extract DNA sequences from fasta records and append them to a list
 for fasta in fasta_sequences:
     DNA_string_list.append(str(fasta.seq))
 
-# concatenate DNA sequences from the list into a single string
+# Concatenate DNA sequences from the list into a single string
 DNA_string = ''
 for nuc in DNA_string_list:
     DNA_string += nuc
 
 
-# Check the sequence to make sure it is a DNA String
+# Check the sequence to make sure it is a DNA String:
 def validate_seq(dna_seq):
     tmp_seq = dna_seq.upper()
     for nuc in tmp_seq:
@@ -30,7 +30,7 @@ def validate_seq(dna_seq):
     return tmp_seq
 
 
-# validate DNA string and assign it to a new variable
+# Validate DNA string and assign it to a new variable:
 DNA_string_verified = validate_seq(DNA_string)
 
 
@@ -39,26 +39,26 @@ def reverse_complement(seq):
 # Swapping adenine with thymine and guanine with cytosine. Reversing newly generated string
 
 
-# generate the reverse complement of the validated DNA string
+# Generate the reverse complement of the validated DNA string
 DNA_string_verified_second_strand = reverse_complement(DNA_string_verified)
 possible_seq_of_proteins = []
 
 
-# class to handle DNA sequences and find open reading frames
+# Class to handle DNA sequences and find open reading frames
 class DNASequence:
     def __init__(self, seq):
         self.seq = seq
 
     def find_open_reading_frames(self):
-        starts = [] # list to hold start codon positions
+        starts = []  # list to hold start codon positions
         for k in range(0, 3):
-            line = [] # list to hold start codon positions in one frame
+            line = []  # list to hold start codon positions in one frame
             for i in range(k, len(self.seq)+1, 3):
                 codon = self.seq[i:i+3]
                 if codon == 'ATG':
                     line.append(i)
             starts.append(line)
-        strands = [] # list to hold protein strings generated from each start codon
+        strands = []  # list to hold protein strings generated from each start codon
         for j in starts:
             for n in j:
                 strand = ''
@@ -74,7 +74,7 @@ class DNASequence:
                 if count < 1:
                     strand = "Stop"
                 strands.append(strand)
-        proteins = [] # list to hold protein sequences generated from each start codon
+        proteins = []  # list to hold protein sequences generated from each start codon
         for str in strands:
             seq_aa = [] # list to hold amino acids translated from each codon
             for l in range(0, len(str) + 1, 3):
@@ -86,12 +86,12 @@ class DNASequence:
             for ch in seq_aa:
                 tmp_seq += ch
             proteins.append(tmp_seq)
-        proteins_without_duplicates = list(set(proteins)) # remove duplicate protein sequences
+        proteins_without_duplicates = list(set(proteins))  # remove duplicate protein sequences
         for protein in proteins_without_duplicates:
             possible_seq_of_proteins.append(protein)
 
 
-# create DNASequence objects for both the forward and reverse complement strand
+# create DNASequence objects for both the forward and reverse complement strand:
 print('Distinct candidate protein string that can be translated from ORFs:')
 first_strand = DNASequence(DNA_string_verified)
 first_strand.find_open_reading_frames()
@@ -99,6 +99,6 @@ second_strand = DNASequence(DNA_string_verified_second_strand)
 second_strand.find_open_reading_frames()
 possible_seq_of_proteins_without_duplicate = list(set(possible_seq_of_proteins))
 
-# print all possible sequences without duplicates
+# print all possible sequences without duplicates: 
 for seq in possible_seq_of_proteins_without_duplicate:
     print(seq)
