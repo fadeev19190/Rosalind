@@ -4,7 +4,7 @@ To allow for the presence of its varying forms, a protein motif is represented b
 
 You can see the complete description and features of a particular protein by its access ID "uniprot_id" in the UniProt database, by inserting the ID number into
 
-[UniProt database](http://www.uniprot.org/uniprot/uniprot_id)
+[UniProt database](http://www.uniprot.org/uniprot/uniprot_id) n/
 
 Alternatively, you can obtain a protein sequence in FASTA format by following
 
