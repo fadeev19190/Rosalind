@@ -1,4 +1,4 @@
-Problem
+[Problem](https://rosalind.info/problems/orf/)
 
 Either strand of a DNA double helix can serve as the coding strand for RNA transcription. Hence, a given DNA string implies six total reading frames, or ways in which the same region of DNA can be translated into amino acids: three reading frames result from reading the string itself, whereas three more result from reading its reverse complement.
 
