@@ -2,7 +2,7 @@ from Bio import SeqIO
 from bio_structs import *
 
 # Specify the path to your FASTA file
-fasta_file = "rosalind_splc-2.txt"
+fasta_file = "RNA Splicing/rosalind_splc-2.txt"
 
 # Open the file and read the sequences
 sequences = SeqIO.parse(fasta_file, "fasta")

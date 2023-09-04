@@ -1,6 +1,6 @@
 import math
 
-with open('rosalind_prob.txt') as f:
+with open('Introduction to Randon Strings/rosalind_prob.txt') as f:
     s = f.readline().replace('\n', '')
     a = f.readline().replace('\n', '').split(' ')
 

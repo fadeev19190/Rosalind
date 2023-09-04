@@ -1,6 +1,6 @@
 from bio_structs import amino_acid_mass
 
-with open('rosalind_prtm.txt') as file:
+with open('Calculating Protein Mass/rosalind_prtm.txt') as file:
     peptide = file.read()
 
 total_mass = 0

@@ -1,4 +1,4 @@
-with open("rosalind_subs.txt", "r") as file:
+with open("Findig a Motif in DNA/rosalind_subs.txt", "r") as file:
     DNA_string_s = file.readline()
     DNA_string_t = 'CCGTTCTCC'
 

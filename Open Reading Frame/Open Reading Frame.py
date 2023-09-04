@@ -3,7 +3,7 @@ from bio_structs import *
 from Bio import SeqIO
 
 # set input file name
-input_file = 'rosalind_orf.txt'
+input_file = 'Open Reading Frame/rosalind_orf.txt'
 
 # read sequences from fasta file
 with open(input_file) as f:

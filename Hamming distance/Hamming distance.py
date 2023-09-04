@@ -1,4 +1,4 @@
-with open("rosalind_hamm.txt", "r") as file:
+with open("Hamming distance/rosalind_hamm.txt", "r") as file:
     content_string1 = file.readline()
     content_string2 = file.readline()
 

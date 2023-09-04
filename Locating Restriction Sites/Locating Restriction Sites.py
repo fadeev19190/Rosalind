@@ -18,7 +18,7 @@ def find_restriction_sites(dna_seq):
 
 
 dna_sequence = ''
-with open('rosalind_revp.txt', "r") as file:
+with open('Locating Restriction Sites/rosalind_revp.txt', "r") as file:
     dna_sequence_list = file.readlines()[1:]
     for line in dna_sequence_list:
         dna_sequence += line.rstrip()

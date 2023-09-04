@@ -17,7 +17,7 @@ def count_perfect_matchings(sequence):
 
 if __name__ == "__main__":
     # Load data from the FASTA file
-    with open("rosalind_pmch-4.txt", 'r') as file:
+    with open("Perfect Matching and RNA Secondary Structure/rosalind_pmch-4.txt", 'r') as file:
         for record in SeqIO.parse(file, 'fasta'):
             sequence = str(record.seq)
             break

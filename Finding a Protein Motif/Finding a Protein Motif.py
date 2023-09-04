@@ -5,7 +5,7 @@ import requests
 url = "https://www.uniprot.org/uniprot/{peptide}.fasta"
 
 # define a list of peptides to retrieve sequences for
-with open('rosalind_mprt-9.txt', 'r') as file:
+with open('Finding a Protein Motif/rosalind_mprt-9.txt', 'r') as file:
     peptides = file.read().replace('\n', ' ')
     peptides_list = peptides.rsplit(' ')
     peptides_list.pop(-1)
